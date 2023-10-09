@@ -1,0 +1,107 @@
+#search-form{
+    display: flex;
+    width: 100%;
+    padding: 100px 0px 30px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-form .content{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#search-form .content h1{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+#search-form .content form{
+    height: 80px;
+    display: flex;
+}
+
+#search-form .content form input{
+    font-size: 20px;
+    padding: 10px;
+    height: 80px;
+    width: 500px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#search-form .content form button{
+    font-size: 30px;
+    height: 80px;
+    width: 80px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+}
+
+#result_holidays{
+    display: flex;
+    width: 100%;
+    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+#result_holidays .content{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#result_holidays .content form{
+    width: 100%;
+}
+
+#result_holidays .content form input{
+    background-color: transparent;
+    margin-bottom: 10px;
+    font-size: 15px;
+    width: 100%;
+}
+
+#result_holidays .card-box{
+    font-size: 15px;
+    width: 300px;
+    border-radius: 8px;
+    background-color: rgb(212, 211, 211);
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px;
+    min-width: 350px;
+}
+
+#result_holidays .box-input{
+    display: flex;
+    width: 100%;
+    gap: 5px;
+}
+
+#result_holidays button{
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(242, 232, 232);
+    color: black;
+    border: solid 1px black;
+    cursor: pointer;
+}
+
+.icon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block page_title %}Pesquisa{% endblock  %}
+
+{% block btt_header %}
+  <button>Cadastrar</button>
+  <button>Login</button>
+{% endblock btt_header %}
+      
+    
+{% block content %}
+<section id="search-form">
+  <div class="container">
+    <div class="content">
+      <h1>Descubra a data de todos os feriados de <br /> acordo com ano</h1>
+
+      <form method="get" action="{% url 'get-holiday-by-year' %}">
+        {{ form }}
+        <button type="submit"><i class="bi bi-search"></i></button>
+      </form>
+
+      {% comment %} <a href="{% url 'list-holiday' %}">Listar meus feriados</a> {% endcomment %}
+    </div> <!-- content -->
+  </div> <!-- container -->
+</section>
+
+<main id="result_holidays">
+  <div class="container">
+    <div class="content">
+      {% for holiday in data %}
+        <div class="card-box">
+        
+            <div class="icon">
+                <i class="bi bi-calendar-event"></i>
+            </div>
+          <form method="post" action="{% url 'create-holiday' %}">
+            {% csrf_token %}
+
+            <div class="box-input">
+              <label for="nome">Nome:</label>
+              <input class="inp_holiday" type="text" value="{{ holiday.name }}" name="name" style="border: none;" readonly />
+            </div>
+
+            <div class="box-input">
+              <label for="nome">Data:</label>
+              <input class="inp_holiday" type="date" value="{{ holiday.date }}" name="data" style="border: none;" readonly />
+            </div>
+
+            <div class="box-input">
+              <label for="nome">Tipo:</label>
+              <input class="inp_holiday" type="text" value="{{ holiday.type }}" style="border: none;" name="tipo" readonly />
+            </div>
+
+            <button type="submit">Salvar</button>
+          </form>
+        </div>
+      {% endfor %}
+    </div> <!-- content -->
+  </div> <!-- container -->
+</main>
+{% endblock content %}
+
+

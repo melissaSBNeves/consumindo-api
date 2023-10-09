@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Holiday</title>
+</head>
+<body>
+
+    <main>
+        
+        <form action="{% url "login-user" %}" method="POST">
+
+            {% csrf_token %}
+
+            <label for="username">Username: </label>
+            <input type="text" name="username">
+
+            <br><br>
+
+            <label for="senha">Senha: </label>
+            <input type="password" name="password">
+
+            <br><br>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p>Não possui um cadastro? <a href="{% url "register-user" %}">Cadastre-se</a></p>
+
+    </main>
+</body>
+</html>

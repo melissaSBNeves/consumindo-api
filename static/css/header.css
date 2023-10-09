@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+header .content{
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    font-weight: 600;
+}
+
+.btt_header button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

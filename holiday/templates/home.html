@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Lista de Feriados
+{% endblock %}
+
+{% block btt_header %}
+  <button>Pesquisar feriados</button>
+  <button>Sair</button>
+{% endblock %}
+
+{% block content %}
+
+    <section>
+        <div class="container">
+            <div class="content">
+                <h4>Bem - vindo(a), {{nome}}</h4>
+            </div>
+        </div>
+    </section>
+    
+    <main>
+        <div class="container">
+            <div class="content">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for holiday in data %}
+                        <tr>
+                          <th scope="row">{{holiday.id}}</th>
+                          <td>{{holiday.name}}</td>
+                          <td>{{holiday.date}}</td>
+                          <td>{{holiday.type}}</td>
+                          <td>
+                            <a class="btn btn-danger" href="{% url 'delete-holiday' pk=holiday.pk %}" role="button">Deletar</a></td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </main>
+{% endblock %}
